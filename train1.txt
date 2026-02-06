@@ -1,0 +1,12 @@
+import torch
+import os
+from app.models.arch import VoiceClassifier
+
+def init_weights():
+    os.makedirs("weights", exist_ok=True)
+    model = VoiceClassifier()
+    torch.save(model.state_dict(), "weights/best_model.pth")
+    print("✅ Model weights initialized.")
+
+if __name__ == "__main__":
+    init_weights()

@@ -1,0 +1,12 @@
+import torch
+import torchvision
+from torchvision import models
+
+print(f"Torch version: {torch.__version__}")
+print(f"Torchvision version: {torchvision.__version__}")
+
+try:
+    resnet = models.resnet18()
+    print("✅ Model loaded successfully. Architecture is ready!")
+except Exception as e:
+    print(f"❌ Still failing: {e}")
